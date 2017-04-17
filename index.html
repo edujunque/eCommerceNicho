@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Vouz</title>
+	<meta charset="utf-8" />
+
+	<!--[if lt IE 9]> 
+		<script src="js/html5shiv.js"></script> 
+	<![endif]-->
+	<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+	}
+	</style>
+		
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript">
+	function abreFechaMenu(){
+		var hamburger = document.getElementById("hamburger");
+		if (hasClass(hamburger, "is-active")){
+			//verifica se esta com o menu aberto, caso sim, retira a classe "is-active"
+			hamburger.className -= " is-active";
+			hamburger.className += " nav-toggle";
+		} else{
+			hamburger.className += " is-active";
+		}
+		var menu = document.getElementById("menu");
+		if (hasClass(menu, "is-active")){
+			//verifica se esta com o menu aberto, caso sim, retira a classe "is-active"
+			menu.className -= " is-active";
+			menu.className += " nav-right nav-menu";
+		} else{
+			menu.className += " is-active";
+		}
+		
+		
+	}
+
+	function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+	}
+</script>
+<script type="text/javascript">// <![CDATA[
+	$(document).ready(function() {
+		function filterPath(string) {
+			return string
+				.replace(/^\//,'')
+				.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+				.replace(/\/$/,'');
+				}
+					$('a[href*=#]').each(function() {
+					if ( filterPath(location.pathname) == filterPath(this.pathname)
+					&& location.hostname == this.hostname
+					&& this.hash.replace(/#/,'') ) {
+					var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+					var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+					if ($target) {
+					var targetOffset = $target.offset().top;
+					$(this).click(function() {
+						//define o tempo da animação de transição.
+					$('html, body').animate({scrollTop: targetOffset}, 1500);
+						return false;
+					});
+				}
+			}
+		});
+	});
+	// ]]>
+</script>
+</head>
+
+<body>
+	<a id="topo"></a>
+	<nav class="nav" style="background: rgb(252,232,109); padding: 35px">
+	  <div class="nav-left">
+	    <a class=" icon is-large">
+	      <img src="img\logo.png" alt="Vouz logo">
+	    </a>
+	  </div>
+
+	  <div class="nav-center">
+	    <a class="nav-item">
+	      <span class="icon">
+	        <i class="fa fa-github"></i>
+	      </span>
+	    </a>
+	    <a class="nav-item">
+	      <span class="icon">
+	        <i class="fa fa-twitter"></i>
+	      </span>
+	    </a>
+	  </div>
+
+	  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+	  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+	  <span id="hamburger" class="nav-toggle" onclick="abreFechaMenu()">
+	    <span></span>
+	    <span></span>
+	    <span></span>
+	  </span>
+
+	  <!-- This "nav-menu" is hidden on mobile -->
+	  <!-- Add the modifier "is-active" to display it on mobile -->
+	  <div id="menu" class="nav-right nav-menu">
+	    <a class="nav-item" href="#comoFunciona">
+	      Como funciona
+	    </a>
+	    <a class="nav-item" href="#Download">
+	      Download
+	    </a>
+	    <a class="nav-item" href="#maisInfo">
+	      Mais informações
+	    </a>
+
+	  </div>
+	</nav>
+
+	<div class="columns">
+		<div class="column">
+			<div class="columns is-gapless">
+				<div class="column is-half">
+					<section class="hero is-large is-bold" style="background: rgb(252,232,109);">
+					  <div class="hero-body">
+					    <div class="container column is-11" style="margin-left: 50px;">
+					      <h1 class="title" style="font-weight: normal;">
+					        VOUZ -
+					      </h1>
+  					      <h1 class="title">
+					        Descubra toda a agitação ao seu redor!
+					      </h1>
+					      <h2 class="subtitle">
+							Festas, baladas, bares e muito mais reunidos em um APP. Com o Vouz você nunca ficará sem ter o que fazer!
+					      </h2>
+					    </div>
+					  </div>
+					</section>
+				</div>
+				<div class="column" style="background: rgb(252,232,109);display: flex; align-items: flex-end; justify-content: flex-end;">
+					<img src="img\holdingCell.png" style="max-width: 90%; height: auto">
+				</div>
+			</div>
+			<a id="comoFunciona"></a>
+			<section class="columns is-gapless" style="background: #FFF; margin: 0; padding-bottom: 50px" >
+				<div class="column">
+					<div class="columns" style="margin-top: 50px; margin-bottom: 50px">
+						<div class="column" style="text-align: center; font-size: 35px">
+							COMO FUNCIONA
+						</div>
+					</div>
+					<div class="columns" >
+						<div class="column is-4" style="display: flex; align-items: center; flex-direction: column;">
+							<div class="columns">
+								<div class="column">
+									<img src="img\holdingCell.png" class="image is-128x128">
+								</div>
+							</div>
+							<div class="columns">
+								<div class="column">
+									CADASTRE-SE
+								</div>
+							</div>
+						</div>
+						<div class="column is-4" style="display: flex; align-items: center; flex-direction: column;">
+							<div class="columns">
+								<div class="column">
+									<img src="img\holdingCell.png" class="image is-128x128">
+								</div>
+							</div>
+							<div class="columns">
+								<div class="column">
+									FIQUE POR DENTRO
+								</div>
+							</div>
+						</div>
+						<div class="column is-4" style="display: flex; align-items: center; flex-direction: column;">
+							<div class="columns">
+								<div class="column">
+									<img src="img\holdingCell.png" class="image is-128x128">
+								</div>
+							</div>
+							<div class="columns">
+								<div class="column">
+									PARTY HARD
+								</div>
+							</div>
+						</div>						
+					</div>
+					<div class="columns">
+						<div class="column" style="text-align: center;">
+							<a class="button is-white is-large is-primary is-outlined" style="width: 250px">
+								<span>
+									<img src="img\googlePalyico.png" class="image is-32x32" style="margin-right: 10px">
+								</span>
+								Google Play
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="columns is-gapless" style="margin: 0" >
+				<a id="Download"></a>
+				<div class="column is-half">
+					<section class="hero is-large is-bold" style="background: rgb(248,248,248);">
+					  <div class="hero-body">
+					    <div class="container column is-11" style="margin-left: 50px;">
+					      <h1 class="title">
+					        Download, encontre a balada e PARTY HARD!
+					      </h1>
+					      <h2 class="subtitle">
+					        Encontre a balada que está bombando mais hoje ou descubra uma festa pelo tipo de música ou ainda reserve seu ingresso para a festa do final de semana.
+					      </h2>
+					    </div>
+					  </div>
+					</section>
+				</div>
+				<div class="column" style="background-color: rgb(248,248,248); display: flex; align-items: flex-end;">
+					<img src="img\holdingCell.png" style="max-width: 80%; height: auto">
+				</div>
+			</section>
+			
+			<section class="columns is-gapless" >
+				<a id="maisInfo"></a>
+				<div class="column">
+					<section class="hero is-medium is-bold">
+					  <div class="hero-body">
+					    <div class="container has-text-centered" >
+					      <h1 class="title">
+					        Um novo jeito de curtir seus dias! Nunca mais fique sem ter o que fazer.
+					      </h1>
+					      <h2 class="subtitle">
+							No Vouz APP você terá uma timeline repleta de festas e baladas, você poderá ver todas as informações que precisa, comprar seu ingresso ou colocar seu nome na lista VIP, ver quais festas seus amigos irão e ainda salvar aquela foto bacana que tiraram de você na festa. Realize seu Check-in e ganhe pontos para trocar por ingressos.
+					      </h2>
+					    </div>
+					  </div>
+					</section>
+				</div>
+			</section>
+			<footer class="footer">
+			  <div class="container">
+			    <div class="content has-text-centered">
+			      <p>
+				    <a class=" icon is-large" href="#topo">
+				      <img src="img\logo.png" alt="Vouz logo">
+				    </a>
+			      </p>
+			      <p>
+		      		  <div class="nav-center">
+					    <a class="nav-item" href="#comoFunciona">
+					      Como funciona
+					    </a>
+					    <a class="nav-item" href="#Download">
+					      Download
+					    </a>
+					    <a class="nav-item" href="#maisInfo">
+					      Mais informações
+					    </a>
+					  </div>
+			      </p>
+			      <p>
+			        Copyright 2017 <strong>VOUZ</strong>. Todos os direitos reservados <a href="http://www.navegarti.com.br"><strong>NavegarTI</strong></a>.
+			      </p>
+			    </div>
+			  </div>
+			</footer>
+		</div>
+	</div>
+			
+</body>
+
+</html>
