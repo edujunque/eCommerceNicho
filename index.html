@@ -38,6 +38,24 @@
 			opacity: 0.3;
 			border-radius: 30px;
 		}
+		.produto{
+			border-right: 1px solid #b5b5b5;
+			margin-bottom: 70px;
+		}
+		.preco-produto{
+			color: rgb(140,173,142);
+			font-weight: bold;
+		}
+		.parcela-produto{
+			font-weight: bold !important;
+		}
+		.addCarrinho{
+			background-color: rgb(140,173,142) !important;
+		}
+		.card-image{
+			display: flex;
+			justify-content: center;
+		}
 	</style>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -138,156 +156,202 @@
 	</nav>
 	<section class="container is-fluid">
 		<div class="columns" style="margin: 30px; flex-wrap: wrap">
-			<div class="column is-3-desktop is-6-tablet">
-				<div class="card">
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
 				  <div class="card-image">
-				    <figure class="image is-4by3">
-				      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+				    <figure>
+				      <img src="img/testeProduto.jpg" alt="Image">
 				    </figure>
 				  </div>
 				  <div class="card-content">
-				    <div class="media">
-				      <div class="media-left">
-				        <figure class="image is-48x48">
-				          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-				        </figure>
-				      </div>
-				      <div class="media-content">
-				        <p class="title is-4">John Smith</p>
-				        <p class="subtitle is-6">@johnsmith</p>
-				      </div>
-				    </div>
-
 				    <div class="content">
 				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-				      <a>#css</a> <a>#responsive</a>
+				      Phasellus nec iaculis mauris.
 				      <br>
-				      <small>11:09 PM - 1 Jan 2016</small>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
 				    </div>
 				  </div>
 				</div>	
 			</div>
-			<div class="column is-3-desktop is-6-tablet">
-				<div class="card">
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
 				  <div class="card-image">
-				    <figure class="image is-4by3">
-				      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+				    <figure>
+				      <img src="img/testeProduto.jpg" alt="Image">
 				    </figure>
 				  </div>
 				  <div class="card-content">
-				    <div class="media">
-				      <div class="media-left">
-				        <figure class="image is-48x48">
-				          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-				        </figure>
-				      </div>
-				      <div class="media-content">
-				        <p class="title is-4">John Smith</p>
-				        <p class="subtitle is-6">@johnsmith</p>
-				      </div>
-				    </div>
-
 				    <div class="content">
 				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-				      <a>#css</a> <a>#responsive</a>
+				      Phasellus nec iaculis mauris.
 				      <br>
-				      <small>11:09 PM - 1 Jan 2016</small>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
 				    </div>
+
+
 				  </div>
 				</div>	
 			</div>
-			<div class="column is-3-desktop is-6-tablet">
-				<div class="card">
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
 				  <div class="card-image">
-				    <figure class="image is-4by3">
-				      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+				    <figure>
+				      <img src="img/testeProduto.jpg" alt="Image">
 				    </figure>
 				  </div>
 				  <div class="card-content">
-				    <div class="media">
-				      <div class="media-left">
-				        <figure class="image is-48x48">
-				          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-				        </figure>
-				      </div>
-				      <div class="media-content">
-				        <p class="title is-4">John Smith</p>
-				        <p class="subtitle is-6">@johnsmith</p>
-				      </div>
-				    </div>
-
 				    <div class="content">
 				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-				      <a>#css</a> <a>#responsive</a>
+				      Phasellus nec iaculis mauris.
 				      <br>
-				      <small>11:09 PM - 1 Jan 2016</small>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
 				    </div>
+
+
 				  </div>
 				</div>	
 			</div>
-			<div class="column is-3-desktop is-6-tablet">
-				<div class="card">
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
 				  <div class="card-image">
-				    <figure class="image is-4by3">
-				      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+				    <figure>
+				      <img src="img/testeProduto.jpg" alt="Image">
 				    </figure>
 				  </div>
 				  <div class="card-content">
-				    <div class="media">
-				      <div class="media-left">
-				        <figure class="image is-48x48">
-				          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-				        </figure>
-				      </div>
-				      <div class="media-content">
-				        <p class="title is-4">John Smith</p>
-				        <p class="subtitle is-6">@johnsmith</p>
-				      </div>
-				    </div>
-
 				    <div class="content">
 				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-				      <a>#css</a> <a>#responsive</a>
+				      Phasellus nec iaculis mauris.
 				      <br>
-				      <small>11:09 PM - 1 Jan 2016</small>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
 				    </div>
+
+
 				  </div>
 				</div>	
 			</div>
-			<div class="column is-3-desktop is-6-tablet">
-				<div class="card">
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
 				  <div class="card-image">
-				    <figure class="image is-4by3">
-				      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+				    <figure>
+				      <img src="img/testeProduto.jpg" alt="Image">
 				    </figure>
 				  </div>
 				  <div class="card-content">
-				    <div class="media">
-				      <div class="media-left">
-				        <figure class="image is-48x48">
-				          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-				        </figure>
-				      </div>
-				      <div class="media-content">
-				        <p class="title is-4">John Smith</p>
-				        <p class="subtitle is-6">@johnsmith</p>
-				      </div>
-				    </div>
-
 				    <div class="content">
 				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-				      <a>#css</a> <a>#responsive</a>
+				      Phasellus nec iaculis mauris.
 				      <br>
-				      <small>11:09 PM - 1 Jan 2016</small>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
 				    </div>
+
+
 				  </div>
 				</div>	
-			</div>																		
+			</div>
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="img/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+
+
+				  </div>
+				</div>	
+			</div>															
 		</div>
 	</section>
 	<footer class="footer container is-fluid">
