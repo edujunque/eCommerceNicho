@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Naive Roots</title>
+	<title>locALL</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--[if lt IE 9]> 
@@ -9,30 +9,12 @@
 	<![endif]-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
 	<style type="text/css">
 		*{
 			margin:0;
 			padding: 0;
-		}
-			/*Links não visitados*/
-		a{
-			text-decoration: none;
-		}
-		nav a:link{
-			color: white;
-		}
-		/*Links visitados*/
-		nav a:visited{
-			color: white;
-		}
-		/*Links Hover*/
-		nav a:hover{
-			color: yellow;
-		}
-		/*Links Ativos*/
-		nav a:active{
-			color: white;
 		}
 		#hamburger:hover {
 			opacity: 0.3;
@@ -71,15 +53,15 @@
 		    padding: 12px 16px;
 		    z-index: 1;
 		    right: 0%;
-		      visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
+	        visibility: hidden;
+		    opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
 		}
 
 		.dropdown:hover .dropdown-content {
 		    /*display: block;*/
-		      visibility: visible;
-  opacity: 1;
+	      visibility: visible;
+		  opacity: 1;
 		}
 		.media{
 			align-items: center;
@@ -91,6 +73,48 @@
 		}
 		.icon-lista-carrinho{
 			padding-right: 25px;
+		}
+		.icon-minhaConta{
+			padding-right: 15px;
+		}
+		.slider{
+			display: flex;
+			justify-content: center;
+		}
+		.slider-nav{
+
+		}
+		.addCarrinho-banner{
+			background-color: rgba(138,171,140,1) !important;
+			color: rgba(255,255,255,1) !important;
+			width: 125px;
+		}
+		.addCarrinho-banner:hover{
+			background-color: rgba(138,171,140,0.8) !important;
+		}
+		.box-nav-banner{
+			-webkit-box-shadow: 0px 0px 20px 2px rgba(91, 91, 91, 0.75);
+			-moz-box-shadow:    0px 0px 20px 2px rgba(91, 91, 91, 0.75);
+			box-shadow:         0px 0px 20px 2px rgba(91, 91, 91, 0.75);
+		}
+		/*Links não visitados*/
+		a{
+			text-decoration: none;
+		}
+		nav a:link{
+			color: rgba(0,0,0,0.8);
+		}
+		/*Links visitados*/
+		nav a:visited{
+			color: white;
+		}
+		/*Links Hover*/
+		nav a:hover{
+			color: white !important;
+		}
+		/*Links Ativos*/
+		nav a:active{
+			color: white;
 		}
 	</style>
 
@@ -176,7 +200,10 @@
 	  <!-- Add the modifier "is-active" to display it on mobile -->
 	  <div id="menu" class="nav-right nav-menu" style="border-right: 1px solid rgba(181,181,181,0.5)">
 	    <a id="menu-Items" class="nav-item" href="#comoFunciona">
-	      Minha conta
+	      	<span class="icon icon-minhaConta">
+			  <i class="fa fa-github"></i>
+			</span>
+	      MINHA CONTA
 	    </a>
 	  </div>
 	<div class="dropdown">
@@ -255,6 +282,58 @@
 	</div>  	  
 	</nav>
 	<section class="container is-fluid">
+		<button type="button" class="slick-prev">Previous</button>
+		  <div class="slider-for">
+			  <div class="card-image">
+			    <figure class="image is-2by1 slider">
+			      <img src="img/games.png">
+			    </figure>
+			  </div>    	
+			  <div class="card-image">
+			    <figure class="image is-2by1 slider">
+			      <img src="img/horizon-zero-dawn-screen-04-us-15jun15.jpg">
+			    </figure>
+			  </div>
+			  <div class="card-image">
+			    <figure class="image is-2by1 slider">
+			      <img src="img/games-facoanimes.jpg">
+			    </figure>
+			  </div>			  			  
+		  </div>
+		  <div class="columns" style="background-color: rgba(255,255,255,0.95); justify-content: center; position: absolute; top: 0; right: 0; margin-right: 100px; margin-top: 100px;">
+		  	<div class="column box-nav-banner">
+			  <div class="slider-nav" style=" width: 200px; height: 200px;">
+			    <div style="margin-top: 30px; display: flex; align-items: center;justify-content: center; flex-direction: column;">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div>
+			    <div style="margin-top: 30px; display: flex; align-items: center;justify-content: center; flex-direction: column;">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div>
+			    <div style="margin-top: 30px; display: flex; align-items: center;justify-content: center; flex-direction: column;">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div>
+			  </div>			  		
+		  	</div>
+		  </div>
+	  
 		<div class="columns" style="margin: 30px; flex-wrap: wrap">
 			<div class="column is-3-desktop is-6-tablet produto">
 				<div class="card" style="box-shadow: none">
@@ -462,7 +541,7 @@
 		      <img src="img\logo.png" alt="Vouz logo">
 		    </a>
 	      </p> -->
-		    <a>
+		    <a href="#topo">
 		      <!-- <img src="img\logo.png" alt="Vouz logo"> -->
 		      <p style="color: rgb(112,68,110); font-size: 30px; ">loc<span style="font-weight: bold">ALL</span></p>
 		    </a>	      
@@ -479,6 +558,29 @@
 	    </div>
 	  </div>
 	</footer>
+
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	  <script type="text/javascript" src="js/slick/slick.min.js"></script>
+
+	  <script type="text/javascript">
+		 $('.slider-for').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: true,
+		  fade: true,
+		  asNavFor: '.slider-nav',
+		});
+		$('.slider-nav').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  asNavFor: '.slider-for',
+		  dots: true,
+		  centerMode: false,
+		  focusOnSelect: true,
+		  arrows: false
+		});
+	  </script>	
 </body>
 
 </html>
