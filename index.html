@@ -56,6 +56,42 @@
 			display: flex;
 			justify-content: center;
 		}
+		.dropdown {
+		    position: relative;
+		    display: inline-block;
+		    margin: 15px;
+		}
+
+		.dropdown-content {
+		    /*display: none;*/
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 400px;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		    padding: 12px 16px;
+		    z-index: 1;
+		    right: 0%;
+		      visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+		}
+
+		.dropdown:hover .dropdown-content {
+		    /*display: block;*/
+		      visibility: visible;
+  opacity: 1;
+		}
+		.media{
+			align-items: center;
+		}
+		.carrinho-lista-btn{
+			width: 150px;
+			color: rgb(112,68,110) !important;
+			font-weight: bold !important;
+		}
+		.icon-lista-carrinho{
+			padding-right: 25px;
+		}
 	</style>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -122,8 +158,10 @@
 	<a id="topo"></a>
 	<nav class="nav is-mobile" style="background: rgb(151,83,108); padding: 15px;">
 	  <div class="nav-left">
-	    <a class=" icon is-large">
-	      <img src="img\logo.png" alt="Vouz logo">
+	    <a class="" style="padding-left: 50px">
+	      <!-- <img src="img\logo.png" alt="Vouz logo"> -->
+	      <p style="color: white; font-size: 30px; ">loc<span style="font-weight: bold">ALL</span></p>
+	      <p style="color: white; font-size: 15px; text-align: left">valinhos<span style="font-weight: bold">,SP</span></p>
 	    </a>
 	  </div>
 	  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
@@ -136,23 +174,85 @@
 
 	  <!-- This "nav-menu" is hidden on mobile -->
 	  <!-- Add the modifier "is-active" to display it on mobile -->
-	  <div id="menu" class="nav-right nav-menu" style="border-right: 1px solid #b5b5b5">
+	  <div id="menu" class="nav-right nav-menu" style="border-right: 1px solid rgba(181,181,181,0.5)">
 	    <a id="menu-Items" class="nav-item" href="#comoFunciona">
 	      Minha conta
 	    </a>
 	  </div>
-	   <div class="nav-item">
-      <div class="field is-grouped">
-        <p class="control">
-          <a class="button is-inverted">
-            <span class="icon">
-              <i class="fa fa-download"></i>
-            </span>
-            <span>Carrinho</span>
-          </a>
-        </p>
-      </div>
-    </div>
+	<div class="dropdown">
+	  <a class="button is-light carrinho-lista-btn">
+      	<span class="icon icon-lista-carrinho">
+		  <i class="fa fa-github"></i>
+		</span>
+		( 3 ITEM(S))
+	  </a>
+	  <div class="dropdown-content">
+		<div class="columns">
+			<div class="column">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-content">
+	  			    <div class="media">
+				      <div class="media-content">
+					    <figure class="image is-96x96">
+					      <img src="img/testeProduto.jpg" alt="Image">
+					    </figure>
+				      </div>
+		  			    <div class="media-content">
+		  			    	<small>Lorem Ipsum </small>	
+		  			    </div>
+				      
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+			</div>		    
+	  </div>
+		<div class="columns">
+			<div class="column">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-content">
+	  			    <div class="media">
+				      <div class="media-content">
+					    <figure class="image is-96x96">
+					      <img src="img/testeProduto.jpg" alt="Image">
+					    </figure>
+				      </div>				 	  			    
+	  			    <div class="media-content">
+	  			    	<small>Lorem Ipsum </small>	
+	  			    </div>
+		   	        <div class="media-content">
+			        	<p class="title is-4 preco-produto">R$ 1.999,98</p>
+			        </div>
+     			    </div>
+				  </div>
+				</div>	
+			</div>		    
+	  </div>	
+		<div class="columns">
+			<div class="column">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-content">
+	  			    <div class="media">
+				      <div class="media-content">
+					    <figure class="image is-96x96">
+					      <img src="img/testeProduto.jpg" alt="Image">
+					    </figure>
+				      </div>
+		  			    <div class="media-content">
+		  			    	<small>Lorem Ipsum </small>	
+		  			    </div>
+				      
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+			</div>		    
+	  </div>	    
+	</div>  	  
 	</nav>
 	<section class="container is-fluid">
 		<div class="columns" style="margin: 30px; flex-wrap: wrap">
@@ -357,11 +457,15 @@
 	<footer class="footer container is-fluid">
 	  <div class="container">
 	    <div class="content has-text-centered">
-	      <p>
+<!-- 	      <p>
 		    <a class=" icon is-large" href="#topo">
 		      <img src="img\logo.png" alt="Vouz logo">
 		    </a>
-	      </p>
+	      </p> -->
+		    <a>
+		      <!-- <img src="img\logo.png" alt="Vouz logo"> -->
+		      <p style="color: rgb(112,68,110); font-size: 30px; ">loc<span style="font-weight: bold">ALL</span></p>
+		    </a>	      
 	      <p>
       		  <div class="nav-center">
 			    <a class="nav-item" href="#comoFunciona">
@@ -370,7 +474,7 @@
 			  </div>
 	      </p>
 	      <p>
-	        Copyright 2017 <strong>Naive Roots</strong>. Todos os direitos reservados <a href="http://www.navegarti.com.br"><strong>NavegarTI</strong></a>.
+	        Copyright 2017 <strong>locALL</strong>. Todos os direitos reservados <a href="http://www.navegarti.com.br"><strong>NavegarTI</strong></a>.
 	      </p>
 	    </div>
 	  </div>
