@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///C:/CodigoFonte/eCommerceNicho/index.html#comoFunciona -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>locALL</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]> 
+		<script src="js/html5shiv.js"></script> 
+	<![endif]-->
+<link rel="stylesheet" href="./locALL_files/bulma.css">
+<link rel="stylesheet" href="./locALL_files/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./locALL_files/slick.css">
+  <link rel="stylesheet" type="text/css" href="./locALL_files/slick-theme.css">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#hamburger:hover {
+			opacity: 0.3;
+			border-radius: 30px;
+		}
+		.produto{
+			border-right: 1px solid #b5b5b5;
+			margin-bottom: 70px;
+		}
+		.preco-produto{
+			color: rgb(140,173,142);
+			font-weight: bold;
+		}
+		.parcela-produto{
+			font-weight: bold !important;
+		}
+		.addCarrinho{
+			background-color: rgb(140,173,142) !important;
+		}
+		.card-image{
+			display: flex;
+			justify-content: center;
+		}
+		.dropdown {
+		    position: relative;
+		    display: inline-block;
+		    margin: 15px;
+		}
+
+		.dropdown-content {
+		    /*display: none;*/
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 400px;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		    padding: 12px 16px;
+		    z-index: 1;
+		    right: 0%;
+	        visibility: hidden;
+		    opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+		}
+
+		.dropdown:hover .dropdown-content {
+		    /*display: block;*/
+	      visibility: visible;
+		  opacity: 1;
+		}
+		.media{
+			align-items: center;
+		}
+		.carrinho-lista-btn{
+			width: 150px;
+			color: rgb(112,68,110) !important;
+			font-weight: bold !important;
+		}
+		.icon-lista-carrinho{
+			padding-right: 25px;
+		}
+		.icon-minhaConta{
+			padding-right: 15px;
+		}
+		.slider{
+			display: flex;
+			justify-content: center;
+			max-width: 70%;
+			height: auto;
+		}
+		.slider-nav{
+
+		}
+		.addCarrinho-banner{
+			background-color: rgba(138,171,140,1) !important;
+			color: rgba(255,255,255,1) !important;
+			width: 125px;
+		}
+		.addCarrinho-banner:hover{
+			background-color: rgba(138,171,140,0.8) !important;
+		}
+		.box-nav-banner{
+			-webkit-box-shadow: 0px 0px 20px 2px rgba(91, 91, 91, 0.75);
+			-moz-box-shadow:    0px 0px 20px 2px rgba(91, 91, 91, 0.75);
+			box-shadow:         0px 0px 20px 2px rgba(91, 91, 91, 0.75);
+		}
+		/*Links não visitados*/
+		a{
+			text-decoration: none;
+		}
+		nav a:link{
+			color: rgba(0,0,0,0.8);
+		}
+		/*Links visitados*/
+		nav a:visited{
+			color: white;
+		}
+		/*Links Hover*/
+		nav a:hover{
+			color: white !important;
+		}
+		/*Links Ativos*/
+		nav a:active{
+			color: white;
+		}
+	</style>
+
+<script type="text/javascript" src="./locALL_files/jquery.min.js.download"></script>
+<script type="text/javascript">
+	function abreFechaMenu(){
+		var hamburger = document.getElementById("hamburger");
+		var menuItems = document.getElementById("menu-Items");
+		if (hasClass(hamburger, "is-active")){
+			//verifica se esta com o menu aberto, caso sim, retira a classe "is-active"
+			hamburger.className -= " is-active";
+			hamburger.className += " nav-toggle";
+			menuItems.style.color = "white";
+		} else{
+			hamburger.className += " is-active";
+			hamburger.setAttribute("color", "black");
+			menuItems.style.color = "black";
+		}
+		var menu = document.getElementById("menu");
+		if (hasClass(menu, "is-active")){
+			//verifica se esta com o menu aberto, caso sim, retira a classe "is-active"
+			menu.className -= " is-active";
+			menu.className += " nav-right nav-menu";
+		} else{
+			menu.className += " is-active";
+		}
+		
+		
+	}
+
+	function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+	}
+</script>
+<script type="text/javascript">// <![CDATA[
+	$(document).ready(function() {
+		function filterPath(string) {
+			return string
+				.replace(/^\//,'')
+				.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+				.replace(/\/$/,'');
+				}
+					$('a[href*=#]').each(function() {
+					if ( filterPath(location.pathname) == filterPath(this.pathname)
+					&& location.hostname == this.hostname
+					&& this.hash.replace(/#/,'') ) {
+					var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+					var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+					if ($target) {
+					var targetOffset = $target.offset().top;
+					$(this).click(function() {
+						//define o tempo da animação de transição.
+					$('html, body').animate({scrollTop: targetOffset}, 1500);
+						return false;
+					});
+				}
+			}
+		});
+	});
+	// ]]>
+</script>
+</head>
+
+<body style="">
+	<a id="topo"></a>
+	<nav class="nav is-mobile" style="background: rgb(151,83,108); padding: 15px;">
+	  <div class="nav-left">
+	    <a class="" style="padding-left: 50px">
+	      <!-- <img src="img\logo.png" alt="Vouz logo"> -->
+	      <p style="color: white; font-size: 30px; ">loc<span style="font-weight: bold">ALL</span></p>
+	      <p style="color: white; font-size: 15px; text-align: left">valinhos<span style="font-weight: bold">,SP</span></p>
+	    </a>
+	  </div>
+	  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+	  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+	  <span id="hamburger" class="nav-toggle" onclick="abreFechaMenu()">
+	    <span id="hamburger-child"></span>
+	    <span id="hamburger-child"></span>
+	    <span id="hamburger-child"></span>
+	  </span>
+
+	  <!-- This "nav-menu" is hidden on mobile -->
+	  <!-- Add the modifier "is-active" to display it on mobile -->
+	  <div id="menu" class="nav-right nav-menu" style="border-right: 1px solid rgba(181,181,181,0.5)">
+	    <a id="menu-Items" class="nav-item" href="file:///C:/CodigoFonte/eCommerceNicho/index.html#comoFunciona">
+	      	<span class="icon icon-minhaConta">
+			  <i class="fa fa-github"></i>
+			</span>
+	      MINHA CONTA
+	    </a>
+	  </div>
+	<div class="dropdown">
+	  <a class="button is-light carrinho-lista-btn">
+      	<span class="icon icon-lista-carrinho">
+		  <i class="fa fa-github"></i>
+		</span>
+		( 3 ITEM(S))
+	  </a>
+	  <div class="dropdown-content">
+		<div class="columns">
+			<div class="column">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-content">
+	  			    <div class="media">
+				      <div class="media-content">
+					    <figure class="image is-96x96">
+					      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+					    </figure>
+				      </div>
+		  			    <div class="media-content">
+		  			    	<small>Lorem Ipsum </small>	
+		  			    </div>
+				      
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+			</div>		    
+	  </div>
+		<div class="columns">
+			<div class="column">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-content">
+	  			    <div class="media">
+				      <div class="media-content">
+					    <figure class="image is-96x96">
+					      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+					    </figure>
+				      </div>				 	  			    
+	  			    <div class="media-content">
+	  			    	<small>Lorem Ipsum </small>	
+	  			    </div>
+		   	        <div class="media-content">
+			        	<p class="title is-4 preco-produto">R$ 1.999,98</p>
+			        </div>
+     			    </div>
+				  </div>
+				</div>	
+			</div>		    
+	  </div>	
+		<div class="columns">
+			<div class="column">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-content">
+	  			    <div class="media">
+				      <div class="media-content">
+					    <figure class="image is-96x96">
+					      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+					    </figure>
+				      </div>
+		  			    <div class="media-content">
+		  			    	<small>Lorem Ipsum </small>	
+		  			    </div>
+				      
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+			</div>		    
+	  </div>	    
+	</div>  	  
+	</div></nav>
+	<section class="container is-fluid">
+		<button type="button" class="slick-prev">Previous</button>
+		  <div class="slider-for slick-initialized slick-slider"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
+			  <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 5589px;"><div class="card-image slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="max-width: 50%;position: relative;left: 0px;top: 0px;z-index: 999;opacity: 1;">
+			    <figure class="image is-2by1 slider">
+			      <img src="./locALL_files/games.png">
+			    </figure>
+			  </div><div class="card-image slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="transition: opacity 500ms ease; width: 1863px; position: relative; left: -1863px; top: 0px; z-index: 998; opacity: 0;">
+			    <figure class="image is-2by1 slider">
+			      <img src="./locALL_files/horizon-zero-dawn-screen-04-us-15jun15.jpg">
+			    </figure>
+			  </div><div class="card-image slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="transition: opacity 500ms ease; width: 1863px; position: relative; left: -3726px; top: 0px; z-index: 998; opacity: 0;">
+			    <figure class="image is-2by1 slider">
+			      <img src="./locALL_files/games-facoanimes.jpg">
+			    </figure>
+			  </div></div></div>    	
+			  
+			  			  			  
+		  <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button></div>
+		  <div class="columns" style="background-color: rgba(255,255,255,0.95); justify-content: center; position: absolute; top: 0; right: 0; margin-right: 100px; margin-top: 100px;">
+		  	<div class="column box-nav-banner">
+			  <div class="slider-nav slick-initialized slick-slider slick-dotted" style=" width: 200px; height: 200px;" role="toolbar">
+			    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 1000px; transform: translate3d(-200px, 0px, 0px);"><div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 200px;" class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner" tabindex="-1">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div><div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 200px;" class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner" tabindex="0">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div><div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 200px;" class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide11">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner" tabindex="-1">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div><div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 200px;" class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide12">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner" tabindex="-1">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div><div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 200px;" class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1">
+			    	<p style="color: rgb(117,117,117); font-weight: bold">Lorem Ipsum</p>
+			    	<p style="color: rgb(117,117,117);">10x <span style="font-size: 20px; font-weight: bold">R$ 199,98</span></p>
+		    		  <a class="button is-primary addCarrinho-banner" tabindex="-1">
+						COMPRAR
+					  </a>
+			    	<p style="color: white"><span style="font-size: 10px; font-weight: bold; color: rgb(117,117,117)">TOTAL</span></p>
+			    	<p style="color: white"><span style="font-size: 12px; color: rgb(117,117,117)">R$ 1.999,98</span></p>
+		    	</div></div></div>
+			    
+			    
+			  <ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation10" id="slick-slide10"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation11" id="slick-slide11" class=""><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation12" id="slick-slide12" class=""><button type="button" data-role="none" role="button" tabindex="0">3</button></li></ul></div>			  		
+		  	</div>
+		  </div>
+	  
+		<div class="columns" style="margin: 30px; flex-wrap: wrap">
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+				  </div>
+				</div>	
+			</div>
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+
+
+				  </div>
+				</div>	
+			</div>
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+
+
+				  </div>
+				</div>	
+			</div>
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+
+
+				  </div>
+				</div>	
+			</div>
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+
+
+				  </div>
+				</div>	
+			</div>
+			<div class="column is-3-desktop is-6-tablet produto">
+				<div class="card" style="box-shadow: none">
+				  <div class="card-image">
+				    <figure>
+				      <img src="./locALL_files/testeProduto.jpg" alt="Image">
+				    </figure>
+				  </div>
+				  <div class="card-content">
+				    <div class="content">
+				      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				      Phasellus nec iaculis mauris.
+				      <br>
+				      <!-- <small>11:09 PM - 1 Jan 2016</small> -->
+				    </div>				  
+				    <div class="media">
+
+				      <div class="media-content">
+				        <p class="title is-4 preco-produto">R$ 1.999,98</p>
+				        <p class="subtitle is-6">10x <span class="parcela-produto">R$ 199,98</span></p>
+				      </div>
+				      <div class="media-left">
+				          <a class="button is-medium is-primary addCarrinho">
+			          	    <span class="icon">
+  								<i class="fa fa-github"></i>
+						    </span>
+				          </a>
+				      </div>				      
+				    </div>
+
+
+				  </div>
+				</div>	
+			</div>															
+		</div>
+	</section>
+	<footer class="footer container is-fluid">
+	  <div class="container">
+	    <div class="content has-text-centered">
+<!-- 	      <p>
+		    <a class=" icon is-large" href="#topo">
+		      <img src="img\logo.png" alt="Vouz logo">
+		    </a>
+	      </p> -->
+		    <a href="file:///C:/CodigoFonte/eCommerceNicho/index.html#topo">
+		      <!-- <img src="img\logo.png" alt="Vouz logo"> -->
+		      <p style="color: rgb(112,68,110); font-size: 30px; ">loc<span style="font-weight: bold">ALL</span></p>
+		    </a>	      
+	      <p>
+      		  </p><div class="nav-center">
+			    <a class="nav-item" href="file:///C:/CodigoFonte/eCommerceNicho/index.html#comoFunciona">
+			      Minha conta
+			    </a>
+			  </div>
+	      <p></p>
+	      <p>
+	        Copyright 2017 <strong>locALL</strong>. Todos os direitos reservados <a href="http://www.navegarti.com.br/"><strong>NavegarTI</strong></a>.
+	      </p>
+	    </div>
+	  </div>
+	</footer>
+
+	  <script type="text/javascript" src="./locALL_files/jquery-1.11.0.min.js.download"></script>
+	  <script type="text/javascript" src="./locALL_files/jquery-migrate-1.2.1.min.js.download"></script>
+	  <script type="text/javascript" src="./locALL_files/slick.min.js.download"></script>
+
+	  <script type="text/javascript">
+		 $('.slider-for').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: true,
+		  fade: true,
+		  asNavFor: '.slider-nav',
+		});
+		$('.slider-nav').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  asNavFor: '.slider-for',
+		  dots: true,
+		  centerMode: false,
+		  focusOnSelect: true,
+		  arrows: false
+		});
+	  </script>	
+
+
+</body></html>
