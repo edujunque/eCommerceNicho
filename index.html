@@ -1,210 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>locALL</title>
+
+	<title>locALL - Home</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--[if lt IE 9]> 
 		<script src="js/html5shiv.js"></script> 
 	<![endif]-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
-	<style type="text/css">
-		*{
-			margin:0;
-			padding: 0;
-		}
-		/*Links não visitados*/
-		a{
-			text-decoration: none;
-		}
-		nav a:link{
-			color: rgba(0,0,0,0.8);
-		}
-		/*Links visitados*/
-		nav a:visited{
-			color: white;
-		}
-		/*Links Hover*/
-		nav a:hover{
-			color: white !important;
-		}
-		/*Links Ativos*/
-		nav a:active{
-			color: white;
-		}
-		#hamburger:hover {
-			opacity: 0.3;
-			border-radius: 30px;
-		}
-		.produto{
-			border-right: 1px solid #b5b5b5;
-			margin-bottom: 70px;
-		}
-		.preco-produto{
-			color: rgb(140,173,142);
-			font-weight: bold;
-		}
-		.parcela-produto{
-			font-weight: bold !important;
-		}
-		.addCarrinho{
-			background-color: rgb(140,173,142) !important;
-		}
-		.card-image{
-			display: flex;
-			justify-content: center;
-		}
-		.dropdown {
-		    position: relative;
-		    display: inline-block;
-		    margin: 15px;
-		}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-		.dropdown-content {
-		    /*display: none;*/
-		    position: absolute;
-		    background-color: #f9f9f9;
-		    min-width: 400px;
-		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		    padding: 12px 16px;
-		    z-index: 1;
-		    right: 0%;
-	        visibility: hidden;
-		    opacity: 0;
-            transition: visibility 0s, opacity 0.5s linear;
-            transition: all 0.5s;
-		}
-
-		.dropdown:hover .dropdown-content {
-		    /*display: block;*/
-	      visibility: visible;
-		  opacity: 1;
-		  transition: all 0.5s;
-		}
-		.media{
-			align-items: center;
-		}
-		.carrinho-lista-btn{
-			width: 150px;
-			color: rgb(112,68,110) !important;
-			font-weight: bold !important;
-		}
-		.carrinho-lista-btn:hover{
-			color: rgba(112,68,110,0.5) !important;
-		}
-		.icon-lista-carrinho{
-			padding-right: 25px;
-		}
-		.icon-minhaConta{
-			padding-right: 15px;
-		}
-		.slider{
-			display: flex;
-			justify-content: center;
-		}
-		.slider-nav{
-
-		}
-		.addCarrinho-banner{
-			background-color: rgba(138,171,140,1) !important;
-			color: rgba(255,255,255,1) !important;
-			width: 125px;
-		}
-		.addCarrinho-banner:hover{
-			background-color: rgba(138,171,140,0.8) !important;
-		}
-		.box-nav-banner{
-			-webkit-box-shadow: 0px 0px 20px 2px rgba(91, 91, 91, 0.75);
-			-moz-box-shadow:    0px 0px 20px 2px rgba(91, 91, 91, 0.75);
-			box-shadow:         0px 0px 20px 2px rgba(91, 91, 91, 0.75);
-		}
-		.slick-next{
-			background-color: rgb(235,173,96) !important;
-			margin-right: 5%;
-			border-radius: 30px;
-			width: 25px;
-			height: 25px;
-		}
-		.slick-prev{
-			background-color: rgb(235,173,96) !important;
-			margin-left: 5%;
-			z-index: 1;
-			border-radius: 30px;
-			width: 25px;
-			height: 25px;
-		}
-		.slick-prev:hover{
-			background-color: rgba(235,173,96,0.8) !important;
-		}
-		.slick-next:hover{
-			background-color: rgba(235,173,96,0.8) !important;
-		}
-		.divSearch nav-item{
-			width: 100% !important;
-		}
-	</style>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script type="text/javascript">
-	function abreFechaMenu(){
-		var hamburger = document.getElementById("hamburger");
-		var menuItems = document.getElementById("menu-Items");
-		if (hasClass(hamburger, "is-active")){
-			//verifica se esta com o menu aberto, caso sim, retira a classe "is-active"
-			hamburger.className -= " is-active";
-			hamburger.className += " nav-toggle";
-			menuItems.style.color = "white";
-		} else{
-			hamburger.className += " is-active";
-			hamburger.setAttribute("color", "black");
-			menuItems.style.color = "black";
-		}
-		var menu = document.getElementById("menu");
-		if (hasClass(menu, "is-active")){
-			//verifica se esta com o menu aberto, caso sim, retira a classe "is-active"
-			menu.className -= " is-active";
-			menu.className += " nav-right nav-menu";
-		} else{
-			menu.className += " is-active";
-		}
-		
-		
-	}
-
-	function hasClass(element, cls) {
-    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-	}
-</script>
-<script type="text/javascript">// <![CDATA[
-	$(document).ready(function() {
-		function filterPath(string) {
-			return string
-				.replace(/^\//,'')
-				.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-				.replace(/\/$/,'');
-				}
-					$('a[href*=#]').each(function() {
-					if ( filterPath(location.pathname) == filterPath(this.pathname)
-					&& location.hostname == this.hostname
-					&& this.hash.replace(/#/,'') ) {
-					var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
-					var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
-					if ($target) {
-					var targetOffset = $target.offset().top;
-					$(this).click(function() {
-						//define o tempo da animação de transição.
-					$('html, body').animate({scrollTop: targetOffset}, 1500);
-						return false;
-					});
-				}
-			}
-		});
-	});
-	// ]]>
-</script>
 </head>
 
 <body>
@@ -221,7 +30,7 @@
 	  <div class="nav-center">
 	    <a class="nav-item">
 		<div id="divSearch" class="field has-addons">
-		  <p class="control" style="width: 100%">
+		  <p class="control" style="width: 230px">
 		    <input class="input" type="text" placeholder="O que você está procurando?">
 		  </p>
 		  <p class="control">
@@ -243,11 +52,11 @@
 	  <!-- This "nav-menu" is hidden on mobile -->
 	  <!-- Add the modifier "is-active" to display it on mobile -->
 	  <div id="menu" class="nav-right nav-menu" style="border-right: 1px solid rgba(181,181,181,0.5)">
-	    <a id="menu-Items" class="nav-item" href="#comoFunciona">
+	    <a id="menu-Items" class="nav-item" href="./carrinho.html">
 	      	<span class="icon icon-minhaConta">
 			  <i class="fa fa-github"></i>
 			</span>
-	      MINHA CONTA
+	      CARRINHO
 	    </a>
 	  </div>
 	<div class="dropdown">
@@ -326,19 +135,19 @@
 	</div>  	  
 	</nav>
 	<section class="container is-fluid">
-		  <div class="slider-for">
-			  <div class="card-image">
-			    <figure class="image is-2by1 slider">
+		  <div class="slider-for banner-topo">
+			  <div class="card-image banner-topo">
+			    <figure class="image is-2by1 is-banner slider">
 			      <img src="img/games.png">
 			    </figure>
 			  </div>    	
-			  <div class="card-image">
-			    <figure class="image is-2by1 slider">
+			  <div class="card-image banner-topo">
+			    <figure class="image is-2by1 is-banner slider">
 			      <img src="img/horizon-zero-dawn-screen-04-us-15jun15.jpg">
 			    </figure>
 			  </div>
-			  <div class="card-image">
-			    <figure class="image is-2by1 slider">
+			  <div class="card-image banner-topo">
+			    <figure class="image is-2by1 is-banner slider">
 			      <img src="img/games-facoanimes.jpg">
 			    </figure>
 			  </div>			  			  
@@ -605,25 +414,9 @@
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	  <script type="text/javascript" src="js/slick/slick.min.js"></script>
+	  <script type="text/javascript" src="js/jsIndex.js"></script>	
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
-	  <script type="text/javascript">
-		 $('.slider-for').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: true,
-		  fade: true,
-		  asNavFor: '.slider-nav',
-		});
-		$('.slider-nav').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  asNavFor: '.slider-for',
-		  dots: true,
-		  centerMode: false,
-		  focusOnSelect: true,
-		  arrows: false
-		});
-	  </script>	
 </body>
 
 </html>
