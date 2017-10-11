@@ -7,15 +7,15 @@ a{
 	text-decoration: none;
 }
 nav a:link{
-	color: rgba(0,0,0,0.8);
+	color: rgba(255,255,255,0.8);
 }
 /*Links visitados*/
 nav a:visited{
-	/*color: white;*/
+	color: white;
 }
 /*Links Hover*/
 nav a:hover{
-	/*color: white;*/
+	color: white !important;
 }
 /*Links Ativos*/
 nav a:active{
@@ -147,4 +147,18 @@ nav a:active{
 }
 .is-16by9 {
 	padding-top: 13.25% !important;
+}
+
+.pagamento-realizado-sucesso-conteudo {
+	width: auto;
+}
+
+.pagamento-realizado-sucesso-titulo {
+	color: white !important;
+}
+
+.pagamento-realizado-sucesso-notification {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }

@@ -222,26 +222,38 @@
 					    </p>
 					    <div class="formasDePagamento">
 							<div class="field">
-							  <p class="control">
-							    <label class="radio">
-									<figure class="image is-32x32">
-										<img src="http://bulma.io/images/placeholders/256x256.png">
-									</figure>							    
-									<input type="radio" name="question">
-							    </label>
-							    <label class="radio">
-									<figure class="image is-32x32">
-										<img src="http://bulma.io/images/placeholders/256x256.png">
+								<div class="control">
+								  <label class="radio">
+								    <input type="radio" name="foobar">
+								    <figure class="image">
+									  <img src="img/visa-ico.png">
 									</figure>
-							      <input type="radio" name="question">
-							    </label>
-							  </p>
+								  </label>
+								  <label class="radio">
+								    <input type="radio" name="foobar" checked>
+								    <figure class="image">
+									  <img src="img/master-ico.png">
+									</figure>
+								  </label>
+  								  <label class="radio">
+								    <input type="radio" name="foobar" checked>
+								    <figure class="image">
+									  <img src="img/paypal-ico.png">
+									</figure>
+								  </label>
+  								  <label class="radio">
+								    <input type="radio" name="foobar" checked>
+								    <figure class="image">
+									  <img src="img/diners-ico.png">
+									</figure>
+								  </label>
+								</div>
 							</div>
 					    </div>
 					  </div>
 					  <footer class="card-footer">
 					    <p class="card-footer-item">
-							<a class="button is-large is-success btnComprar">Realizar pagamento</a>
+							<a id="btnRealizarPagamento" class="button is-large is-success btnComprar">Realizar pagamento</a>
 					    </p>
 					  </footer>
 					</div>					
@@ -274,6 +286,18 @@
 	    </div>
 	  </div>
 	</footer>
+
+<!-- sessão modal pagamento realizado -->
+<div id="modal-pagamento-sucesso" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content is-medium pagamento-realizado-sucesso-conteudo">
+  	<div class="content notification is-primary pagamento-realizado-sucesso-notification">
+		<h1 class="is-medium pagamento-realizado-sucesso-titulo">Pagamento realizado com sucesso!</h1>
+	  <a class="button is-large btn-CloseModal-PagamentoSucesso">VOLTAR PARA HOME</a>
+	</div>
+  </div>
+  <button id="btnCloseModalPagamentoSucesso" class="modal-close is-large btn-CloseModal-PagamentoSucesso" aria-label="close"></button>
+</div>
 
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

@@ -65,6 +65,25 @@ return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 	});
 	// ]]>
 
+$(document).ready(function(){
+	$("#btnRealizarPagamento").click(function() {
+		//alert("teste");
+		$("#btnRealizarPagamento").addClass("is-loading");
+		setTimeout(() => {
+            // callback function for timer, gets called after the time-delay
+            // Your timer is done now. Print a line for debugging and resolve myTimerPromise
+            // $("#btnRealizarPagamento").removeClass("is-loading");
+            $("#modal-pagamento-sucesso").addClass("is-active");
+            //Aparecer modal com compra realizada com sucesso.
+        }, 2000);  // This promise will be resolved in 2000 milli-seconds
+
+	});
+		$(".btn-CloseModal-PagamentoSucesso").click(function() {
+			location.assign("index.html");
+	});
+});
+
+
 	 $('.slider-for').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
